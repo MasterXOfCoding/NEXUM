@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070B" />
+  <meta name="description" content="A private-minded network for thoughtful ideas, enduring ventures, and meaningful connections." />
+  <title>Nexus — Elite Network</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#feed">Skip to feed</a>
+
+  <header class="topbar">
+    <a class="brand" href="#feed" aria-label="Nexus home"><span class="brand-mark" aria-hidden="true">✦</span> NEXUS</a>
+    <label class="search-box" for="searchInput"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search the network..." autocomplete="off" /></label>
+    <button class="top-avatar avatar avatar-you" id="profileShortcut" type="button" aria-label="Open your profile">A</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Main navigation">
+      <nav class="main-nav">
+        <button class="nav-link active" type="button" data-view="home"><span aria-hidden="true">⌂</span> Home</button>
+        <button class="nav-link" type="button" data-view="discover"><span aria-hidden="true">◉</span> Discover</button>
+        <button class="nav-link" type="button" data-view="notifications"><span aria-hidden="true">♧</span> Notifications <b class="notification-badge">3</b></button>
+        <button class="nav-link" type="button" data-view="messages"><span aria-hidden="true">✉</span> Messages</button>
+        <button class="nav-link" type="button" data-view="profile"><span aria-hidden="true">◌</span> Profile</button>
+      </nav>
+      <div class="profile-card glass-panel">
+        <div class="avatar avatar-you" aria-hidden="true">A</div>
+        <div class="profile-details"><strong>Alex Dev</strong><span>@alex_nxt</span></div>
+        <button class="icon-button" id="profileMenu" type="button" aria-label="Profile options">···</button>
+      </div>
+      <div class="sidebar-note"><strong>Your network portfolio</strong><p>Connecting ambitious ideas with thoughtful people.</p></div>
+    </aside>
+
+    <main class="feed" id="feed" tabindex="-1">
+      <section class="feed-intro" aria-labelledby="welcomeTitle">
+        <div>
+          <p class="eyebrow">THE NEXUS NETWORK</p>
+          <h1 id="welcomeTitle">Welcome back, <span>Alex.</span></h1>
+          <p class="welcome-copy">A considered perspective is always worth sharing.</p>
+          <button class="premium-button" id="premiumTrigger" type="button"><span aria-hidden="true">✦</span> Explore Nexus+</button>
+          <span class="premium-status" id="premiumStatus" hidden>DEMO ACCESS ACTIVE</span>
+        </div>
+        <span class="intro-orbit" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="stories glass-panel" aria-label="Broadcasts">
+        <div class="stories-heading"><div><h2>Broadcasts</h2><p>Recent moments from your circle</p></div><span class="stories-live"><i></i> TODAY</span></div>
+        <div class="stories-track">
+          <button class="story-card own-story" type="button" data-story="Your story"><span class="story-ring"><span class="avatar avatar-you">A</span><i>＋</i></span><strong>Your broadcast</strong></button>
+          <button class="story-card" type="button" data-story="Maya Chen"><span class="story-ring"><span class="avatar avatar-coral">M</span></span><strong>Maya Chen</strong></button>
+          <button class="story-card" type="button" data-story="Jules Rivera"><span class="story-ring"><span class="avatar avatar-blue">J</span></span><strong>Jules Rivera</strong></button>
+          <button class="story-card" type="button" data-story="Sam Okafor"><span class="story-ring"><span class="avatar avatar-gold">S</span></span><strong>Sam Okafor</strong></button>
+        </div>
+      </section>
+
+      <form class="composer glass-panel" id="postForm">
+        <div class="composer-row"><div class="avatar avatar-you" aria-hidden="true">A</div><label class="visually-hidden" for="postText">Write a post</label><textarea id="postText" maxlength="500" rows="3" placeholder="Share a thoughtful signal with the network..."></textarea></div>
+        <div class="attachment-preview" id="imagePreview" hidden><img id="previewImage" alt="Selected image preview" /><button type="button" id="removeImage" aria-label="Remove image">×</button></div>
+        <div class="attachment-preview video-preview" id="videoPreview" hidden><video id="previewVideo" controls playsinline></video><p class="video-note">Playback support depends on your browser and video format.</p><button type="button" id="removeVideo" aria-label="Remove video">×</button></div>
+        <div class="poll-builder" id="pollBuilder" hidden>
+          <label>Poll question<input id="pollQuestion" maxlength="120" placeholder="Ask your community" /></label>
+          <div class="poll-options"><label>Option one<input id="pollOptionOne" maxlength="60" placeholder="First choice" /></label><label>Option two<input id="pollOptionTwo" maxlength="60" placeholder="Second choice" /></label></div>
+        </div>
+        <input id="imageInput" type="file" accept="image/*" hidden />
+        <input id="videoInput" type="file" accept="video/*" hidden />
+        <p class="short-hint" id="shortHint" hidden>Short mode · up to 150 characters. Add a vertical video to create a Short.</p>
+        <div class="composer-footer">
+          <div class="composer-tools"><button type="button" id="imageTrigger">▧ <span>Image</span></button><button type="button" id="videoTrigger">▶ <span>Video</span></button><button type="button" id="pollTrigger" aria-pressed="false">▤ <span>Poll</span></button><button type="button" id="shortTrigger" aria-pressed="false">▯ <span>Short</span></button></div>
+          <span class="character-count" id="characterCount">0 / 500</span>
+          <button class="post-button" type="submit">Broadcast <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+
+      <section aria-labelledby="feedHeading">
+        <div class="feed-heading"><div><h2 id="feedHeading">Intel feed</h2><p id="feedSubtitle">Ideas, ventures, and community highlights.</p></div><label class="filter-wrap"><span class="visually-hidden">Sort posts</span><select id="feedFilter"><option value="recent">Most recent</option><option value="popular">Most loved</option></select></label></div>
+        <div class="posts" id="posts" aria-live="polite"></div>
+        <p class="feed-status" id="feedStatus" role="status" hidden>Loading more conversations…</p>
+        <div class="empty-state glass-panel" id="emptyState" hidden><span aria-hidden="true">✦</span><h2>No signals found</h2><p>Try another search, or start a conversation of your own.</p></div>
+      </section>
+    </main>
+
+    <aside class="rightbar" aria-label="Network discovery">
+      <section class="side-panel glass-panel">
+        <div class="panel-heading"><h2>People to know</h2><button class="text-button" id="seePeople" type="button">View all</button></div>
+        <div class="person"><div class="avatar avatar-coral">M</div><div class="person-info"><strong>Maya Chen</strong><span>Building thoughtful ventures</span></div><button class="follow-button" type="button" aria-label="Follow Maya Chen">＋</button></div>
+        <div class="person"><div class="avatar avatar-blue">J</div><div class="person-info"><strong>Jules Rivera</strong><span>Designing a softer world</span></div><button class="follow-button" type="button" aria-label="Follow Jules Rivera">＋</button></div>
+        <div class="person"><div class="avatar avatar-gold">S</div><div class="person-info"><strong>Sam Okafor</strong><span>Growing ideas and gardens</span></div><button class="follow-button" type="button" aria-label="Follow Sam Okafor">＋</button></div>
+      </section>
+
+      <section class="side-panel glass-panel trends-panel">
+        <div class="panel-heading"><h2>Trending topics</h2><span class="live-dot">LIVE</span></div>
+        <button class="trend-link" type="button" data-query="WebGPU"><span>Technology · Trending</span><strong>#WebGPU</strong><small>2,408 posts</small></button>
+        <button class="trend-link" type="button" data-query="Glassmorphism"><span>Design · Trending</span><strong>#Glassmorphism</strong><small>1,862 posts</small></button>
+        <button class="trend-link" type="button" data-query="MakeSomething"><span>Community · Today</span><strong>#MakeSomething</strong><small>946 posts</small></button>
+      </section>
+
+      <section class="side-panel glass-panel market-panel" aria-labelledby="marketHeading">
+        <div class="panel-heading"><h2 id="marketHeading">Market ledger</h2><span class="market-demo-label">DEMO</span></div>
+        <p class="market-caption">Illustrative indicators · not live data</p>
+        <div class="market-row"><span>Global equities</span><strong>+1.24%</strong><small>Broad market proxy</small></div>
+        <div class="market-row"><span>Private credit</span><strong>+0.38%</strong><small>Illustrative monthly estimate</small></div>
+        <div class="market-row"><span>Real assets</span><strong>+0.71%</strong><small>Illustrative quarterly estimate</small></div>
+        <button class="market-briefing" id="marketBriefing" type="button">Open market note <span aria-hidden="true">↗</span></button>
+        <p class="market-disclaimer">Fictional sample figures for interface demonstration only. Not investment advice.</p>
+      </section>
+
+      <section class="side-panel glass-panel chats-panel" aria-labelledby="chatsHeading">
+        <div class="panel-heading"><h2 id="chatsHeading">Active chats</h2><span class="online-dot" aria-label="Online"></span></div>
+        <button class="chat-link" type="button" data-chat="Maya Chen"><span class="avatar avatar-coral">M</span><span><strong>Maya Chen</strong><small>Online now</small></span><i aria-hidden="true"></i></button>
+        <button class="chat-link" type="button" data-chat="Jules Rivera"><span class="avatar avatar-blue">J</span><span><strong>Jules Rivera</strong><small>Designing something new</small></span></button>
+      </section>
+      <footer class="site-footer">About · Guidelines · Privacy<br /><span>Made for meaningful moments ♥</span></footer>
+    </aside>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="active" type="button" data-view="home" aria-label="Home">⌂</button><button type="button" data-view="discover" aria-label="Discover">◉</button><button type="button" data-view="notifications" aria-label="Notifications">♧</button><button type="button" data-view="messages" aria-label="Messages">✉</button><button type="button" data-view="profile" aria-label="Profile">◌</button>
+  </nav>
+
+  <dialog class="app-dialog" id="appDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-header"><h2 id="dialogTitle">Nexus</h2><button id="closeDialog" type="button" aria-label="Close dialog">×</button></div>
+    <div id="dialogBody"></div>
+  </dialog>
+</body>
+</html>
