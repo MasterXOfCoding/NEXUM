@@ -15,7 +15,13 @@
   <header class="topbar">
     <a class="brand" href="#feed" aria-label="Nexus home"><span class="brand-mark" aria-hidden="true">✦</span> NEXUS</a>
     <label class="search-box" for="searchInput"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search the network..." autocomplete="off" /></label>
-    <button class="top-avatar avatar avatar-you" id="profileShortcut" type="button" aria-label="Open your profile">A</button>
+    <div class="topbar-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle interface theme">
+        <span aria-hidden="true">☼</span>
+        <span>Theme</span>
+      </button>
+      <button class="top-avatar avatar avatar-you" id="profileShortcut" type="button" aria-label="Open your profile">A</button>
+    </div>
   </header>
 
   <div class="layout">
@@ -58,7 +64,7 @@
       </section>
 
       <form class="composer glass-panel" id="postForm">
-        <div class="composer-row"><div class="avatar avatar-you" aria-hidden="true">A</div><label class="visually-hidden" for="postText">Write a post</label><textarea id="postText" maxlength="500" rows="3" placeholder="Share a thoughtful signal with the network..."></textarea></div>
+        <div class="composer-row"><div class="avatar avatar-you" aria-hidden="true">A</div><label class="visually-hidden" for="postText">Write a post</label><textarea id="postText" maxlength="500" rows="3" placeholder="What’s on your mind, Alex?"></textarea></div>
         <div class="attachment-preview" id="imagePreview" hidden><img id="previewImage" alt="Selected image preview" /><button type="button" id="removeImage" aria-label="Remove image">×</button></div>
         <div class="attachment-preview video-preview" id="videoPreview" hidden><video id="previewVideo" controls playsinline></video><p class="video-note">Playback support depends on your browser and video format.</p><button type="button" id="removeVideo" aria-label="Remove video">×</button></div>
         <div class="poll-builder" id="pollBuilder" hidden>
@@ -76,7 +82,7 @@
       </form>
 
       <section aria-labelledby="feedHeading">
-        <div class="feed-heading"><div><h2 id="feedHeading">Intel feed</h2><p id="feedSubtitle">Ideas, ventures, and community highlights.</p></div><label class="filter-wrap"><span class="visually-hidden">Sort posts</span><select id="feedFilter"><option value="recent">Most recent</option><option value="popular">Most loved</option></select></label></div>
+        <div class="feed-heading"><div><h2 id="feedHeading">Intel feed</h2><p id="feedSubtitle">Ideas, ventures, and community highlights.</p></div><label class="filter-wrap"><span class="visually-hidden">Sort videos</span><select id="feedFilter"><option value="recent">For you</option><option value="popular">Most liked</option></select></label></div>
         <div class="posts" id="posts" aria-live="polite"></div>
         <p class="feed-status" id="feedStatus" role="status" hidden>Loading more conversations…</p>
         <div class="empty-state glass-panel" id="emptyState" hidden><span aria-hidden="true">✦</span><h2>No signals found</h2><p>Try another search, or start a conversation of your own.</p></div>
